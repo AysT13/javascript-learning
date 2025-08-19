@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"> -->
   </head>
   <body>
-    <h1>JavaScript Learning</h1>
+    <h1>JavaScript Learning - Core Topics with Examples</h1>
 
     <section class="topic">
       <h2>1. Variables (var, let, const)</h2>
@@ -431,7 +431,7 @@ console.log(cars); // ["audi", "mercedes"]
 
       <ul>
         <li>
-          <span forEach class="bold">forEach() </span> performs an action for
+          <span class="bold">forEach() </span> performs an action for
           each element (but doesn't create a new array) -It just performs the
           action; it doesn't return anything or create a new array.
         </li>
@@ -1215,8 +1215,58 @@ document.getElementById("changeColor").addEventListener("click", function () {
 </code></pre>
     </section>
 
+
+
+
+
+<section class="topic">
+      <h2>26. Functional Programming (map(), filter(), reduce(), sort())</h2>
+    <p>Functional programming uses functions like map, filter, and reduce to transform data.
+It avoids changing the original array and helps write clean, reusable code.</p>
+<p>sort() reorders elements but changes the original array, unlike map or filter.</p>
+       <ul>
+    <li><span class="bold">map() </span> change every item - returns new array</li>
+    <li><span class="bold">filter() </span>  keep some items - returns new array</li>
+    <li><span class="bold">reduce() </span>  get one final value - returns one value</li>
+    <li><span class="bold">sort() </span>  rearrange items - changes array</li>
+  </ul>
+      <pre><code>// map() - Changes every item and returns a new array 
+const nums = [1, 2, 3];
+const squares = nums.map(n => n * n);
+console.log(squares); // [1, 4, 9]
+
+// filter() - Selects items that match a condition and returns a new array.
+const values = [1, 2, 3, 4, 5];
+const even = values.filter(n => n % 2 === 0);
+console.log(even); // [2, 4]
+
+//reduce() - Combines everything into a single value (like a sum, an object, or a string).
+array.reduce((accumulator, currentValue) => {
+   return accumulator;
+}, initialValue);
+
+const total = [1, 2, 3].reduce((acc, cur) => acc + cur, 0);
+console.log(total); // 6
+
+const letters = ['a', 'b', 'a'];
+const count = letters.reduce((acc, cur) => {
+  acc[cur] = (acc[cur] || 0) + 1;
+  return acc;
+}, {});
+console.log(count); // { a: 2, b: 1 }
+
+//sort() - Reorders the array (ascending or descending).
+//Important: It changes the original array unless copied
+
+const scores = [100, 80, 60];
+const sorted = [...scores].sort((a, b) => b - a);
+console.log(sorted); // [100, 80, 60]
+</code></pre>
+    </section>
+
+
     <section class="topic">
-      <h2>26. Callback Functions</h2>
+      <h2>27. Callback Functions</h2>
       <p>
         Pass one function as an argument to another function. The passed
         function is then called at a specific time, and this is what is known as
@@ -1255,7 +1305,7 @@ numbers.forEach(function (number) {
     </section>
 
     <section class="topic">
-      <h2>27. Promises (I Promise, I'll Let You Know When It's Done)</h2>
+      <h2>28. Promises (I Promise, I'll Let You Know When It's Done)</h2>
       <p>
         Manage asynchronous operations, such as fetching data from an API or
         uploading a file. It represents an expected operation and has three
@@ -1330,7 +1380,7 @@ fetchData()
     </section>
 
     <section class="topic">
-      <h2>28. Fetching Data with the Fetch API</h2>
+      <h2>29. Fetching Data with the Fetch API</h2>
       <p>
         The fetch() function allows you to make HTTP requests (fetch(url) -
         sends a network request (GET by default)), such as fetching data (GET)
@@ -1372,7 +1422,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
     </section>
 
     <section class="topic">
-      <h2>29. HTTP Methods (CRUD)</h2>
+      <h2>30. HTTP Methods (CRUD)</h2>
       <p>
         HTTP methods define what action you want to perform on the server. They
         are often used with fetch() to work with APIs.
@@ -1433,7 +1483,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/1", {
     </section>
 
     <section class="topic">
-      <h2>30. Async / Await</h2>
+      <h2>31. Async / Await</h2>
       <p>
         Async is for writing Promises more easily. async - makes a function
         asynchronous. await - is only used inside an async function. It waits
